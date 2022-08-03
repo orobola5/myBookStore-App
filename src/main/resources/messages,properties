@@ -1,0 +1,6 @@
+book.name.notBlank=Name cannot be empty.
+book.price.notBlank=Price cannot be empty.
+book.authors.notBlank=Authors cannot be empty.
+book.isbn.notBlank=ISBN cannot be empty.
+book.isbn.size=ISBN can have 10 or 13 digits.
+book.publisher.notBlank=Publisher cannot be empty.
