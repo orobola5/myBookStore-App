@@ -25,17 +25,17 @@ public class BookController {
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
-//    @GetMapping("/")
-//    public String list(Model model){
-//        model.addAttribute("books",bookService.findAll());
-//        return "list";
-//    }
-
     @GetMapping("/book")
-    public String getAllBooks(Model model){
+    public String list(Model model){
         model.addAttribute("books",bookService.findAll());
         return "list";
     }
+
+//    @GetMapping("/book")
+//    public String getAllBooks(Model model){
+//        model.addAttribute("books",bookService.findAll());
+//        return "list";
+//    }
 
     @GetMapping("/book/add")
     public String addBook(Model model){
@@ -68,7 +68,7 @@ public class BookController {
         model.addAttribute("book",bookService.findOne(id));
         return "form";
     }
-
+@PostMapping("/book/{id}/delete")
     public String deleteBook(@PathVariable Long id,RedirectAttributes redirectAttributes){
         bookService.delete(id);
         redirectAttributes.addFlashAttribute("successMessage","deleted book successfully!");
